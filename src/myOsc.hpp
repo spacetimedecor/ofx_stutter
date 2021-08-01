@@ -12,13 +12,13 @@ struct myOsc {
     private:
         static ofxOscMessage currentMessage;
         static std::map<std::string, OscObserver> observers;
-        static void broadcastMessage(ofxOscMessage currentMessage);
     public:
         static void setup();
         static void stop();
         static void update();
         static void subscribe(std::string name, OscObserver observer);
         static void unsubscribe(std::string name);
+        static void broadcastMessage(ofxOscMessage currentMessage);
         static ofxOscReceiver receiver;
 };
 

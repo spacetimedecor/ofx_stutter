@@ -7,12 +7,6 @@ auto myOsc::observers = std::map<std::string, OscObserver>();
 void myOsc::setup() {
     ofLog(OF_LOG_NOTICE, "myOsc::setup");
     receiver.setup(PORT);
-    OscObserver testObserver = [](ofxOscMessage& message){
-        std::cout << message << std::endl;
-    };
-    myOsc::subscribe("test", testObserver);
-    myOsc::broadcastMessage(currentMessage);
-//    myOsc::unsubscribe("test");
 }
 
 void myOsc::stop() {
