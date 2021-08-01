@@ -1,13 +1,13 @@
 #include "ofApp.h"
 #include "myWindow.hpp"
 #include "myOsc.hpp"
-#include "myMessageInterpretter.hpp"
+#include "myMessageInterpreter.hpp"
 
 //--------------------------------------------------------------
 void ofApp::setup(){
     myWindow::setup();
     myOsc::setup();
-    myMessageInterpretter::setup();
+    myMessageInterpreter::setup();
 }
 
 //--------------------------------------------------------------

@@ -1,12 +1,12 @@
-#ifndef MYSKETCH_MYMESSAGEINTERPRETTER_HPP
-#define MYSKETCH_MYMESSAGEINTERPRETTER_HPP
+#ifndef MYSKETCH_MYMESSAGEINTERPRETER_HPP
+#define MYSKETCH_MYMESSAGEINTERPRETER_HPP
 
 #pragma once
 #include "myOsc.hpp"
 
 typedef std::map<std::string, std::vector<OscObserver>> MessageFunctionMap;
 
-struct myMessageInterpretter {
+struct myMessageInterpreter {
     public:
         static void interpret(ofxOscMessage message);
         static void setup();
@@ -14,4 +14,4 @@ struct myMessageInterpretter {
         static MessageFunctionMap map;
 };
 
-#endif //MYSKETCH_MYMESSAGEINTERPRETTER_HPP
+#endif //MYSKETCH_MYMESSAGEINTERPRETER_HPP

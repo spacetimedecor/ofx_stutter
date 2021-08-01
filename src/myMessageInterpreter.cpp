@@ -1,6 +1,6 @@
-#include "myMessageInterpretter.hpp"
+#include "myMessageInterpreter.hpp"
 
-MessageFunctionMap myMessageInterpretter::map {
+MessageFunctionMap myMessageInterpreter::map {
     {
         "/Test",
         {
@@ -29,7 +29,7 @@ MessageFunctionMap myMessageInterpretter::map {
     },
 };
 
-void myMessageInterpretter::interpret(ofxOscMessage message) {
+void myMessageInterpreter::interpret(ofxOscMessage message) {
 
     auto messageAddress = message.getAddress();
     if (!map.count(messageAddress)) return;
@@ -37,8 +37,8 @@ void myMessageInterpretter::interpret(ofxOscMessage message) {
     for (OscObserver const &observer: map.at(messageAddress)) observer(message);
 }
 
-void myMessageInterpretter::setup() {
+void myMessageInterpreter::setup() {
     myOsc::subscribe("message_interpreter", [](ofxOscMessage &message){
-        myMessageInterpretter::interpret(message);
+        myMessageInterpreter::interpret(message);
     });
 }
