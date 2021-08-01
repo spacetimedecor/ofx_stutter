@@ -6,13 +6,13 @@ auto myOsc::observers = std::map<std::string, OscObserver>();
 
 void myOsc::setup() {
     ofLog(OF_LOG_NOTICE, "myOsc::setup");
-    receiver.setup(0);
+    receiver.setup(PORT);
     OscObserver testObserver = [](ofxOscMessage& message){
-        ofLog(OF_LOG_NOTICE, "a message");
+        std::cout << message << std::endl;
     };
     myOsc::subscribe("test", testObserver);
     myOsc::broadcastMessage(currentMessage);
-    myOsc::unsubscribe("test");
+//    myOsc::unsubscribe("test");
 }
 
 void myOsc::stop() {
@@ -21,7 +21,7 @@ void myOsc::stop() {
 
 void myOsc::update() {
     while (receiver.hasWaitingMessages()) {
-        receiver.getNextMessage(currentMessage);
+        receiver.getNextMessage(&currentMessage);
         broadcastMessage(currentMessage);
     }
 }
@@ -35,7 +35,7 @@ void myOsc::unsubscribe(std::string name) {
 };
 
 void myOsc::broadcastMessage(ofxOscMessage message) {
-    for (std::pair<std::string, OscObserver> const& x : observers)
+    for (std::pair<std::string, OscObserver> const& x : myOsc::observers)
     {
         auto const observer = x.second;
         observer(message);

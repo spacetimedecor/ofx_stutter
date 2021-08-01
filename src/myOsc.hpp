@@ -4,6 +4,8 @@
 #ifndef myosc_hpp
 #define myosc_hpp
 
+#define PORT 12345
+
 using OscObserver = std::function <void(ofxOscMessage&)>;
 
 struct myOsc {
