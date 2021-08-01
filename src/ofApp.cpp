@@ -1,14 +1,13 @@
 #include "ofApp.h"
 #include "myWindow.hpp"
 #include "myOsc.hpp"
+#include "myMessageInterpretter.hpp"
 
 //--------------------------------------------------------------
 void ofApp::setup(){
     myWindow::setup();
     myOsc::setup();
-    myOsc::subscribe("test", [](ofxOscMessage& message){
-        std::cout << message << std::endl;
-    });
+    myMessageInterpretter::setup();
 }
 
 //--------------------------------------------------------------

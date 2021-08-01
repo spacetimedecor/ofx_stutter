@@ -6,7 +6,7 @@
 
 #define PORT 12345
 
-using OscObserver = std::function <void(ofxOscMessage&)>;
+typedef std::function <void(ofxOscMessage&)> OscObserver;
 
 struct myOsc {
     private:
