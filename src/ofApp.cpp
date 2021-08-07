@@ -2,17 +2,20 @@
 #include "myWindow.hpp"
 #include "myOsc.hpp"
 #include "myMessageInterpreter.hpp"
+#include "myVideos.hpp"
 
 //--------------------------------------------------------------
 void ofApp::setup(){
     myWindow::setup();
     myOsc::setup();
     myMessageInterpreter::setup();
+    myVideos::setup();
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
     myOsc::update();
+    myVideos::update();
 }
 
 //--------------------------------------------------------------

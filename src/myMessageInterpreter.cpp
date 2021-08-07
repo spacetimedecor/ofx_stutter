@@ -17,13 +17,13 @@ MessageFunctionMap myMessageInterpreter::map {
         {
             [](ofxOscMessage &message) {
                 auto test = 1;
-                std::cout << test << std::endl;
-                std::cout << message << std::endl;
+                cout << test << endl;
+                cout << message << endl;
             },
             [](ofxOscMessage &message) {
                 auto test = 2;
-                std::cout << test << std::endl;
-                std::cout << message << std::endl;
+                cout << test << endl;
+                cout << message << endl;
             },
         }
     },

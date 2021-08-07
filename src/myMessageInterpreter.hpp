@@ -3,8 +3,9 @@
 
 #pragma once
 #include "myOsc.hpp"
+using namespace std;
 
-typedef std::map<std::string, std::vector<OscObserver>> MessageFunctionMap;
+typedef map<string, vector<OscObserver>> MessageFunctionMap;
 
 struct myMessageInterpreter {
     public:
