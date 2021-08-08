@@ -10,6 +10,11 @@ void ofApp::setup(){
     myOsc::setup();
     myMessageInterpreter::setup();
     myVideos::setup();
+
+    myVideos::createVideoPlayer("Dancing");
+    myVideoPlayer* aVideoPlayer = myVideos::videoPlayers.at("Dancing");
+    aVideoPlayer->loadVideo("Dancing.mov");
+    aVideoPlayer->playVideo();
 }
 
 //--------------------------------------------------------------

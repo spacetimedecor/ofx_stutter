@@ -44,8 +44,8 @@ myVideoPlayer* myVideos::createVideoPlayer(string name) {
 }
 
 void myVideos::update() {
-    for (pair<string, myVideoPlayer *> const &p : videoPlayers)
-        p.second->update();
+    for (pair<string, myVideoPlayer*> const &p : videoPlayers)
+        p.second->updateVideo();
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -63,7 +63,7 @@ void myVideoPlayer::loadVideo(ofFile file) {
 }
 
 void myVideoPlayer::playVideo() {
-
+    this->play();
 }
 
 void myVideoPlayer::updateVideo() {

@@ -25,15 +25,15 @@ class myVideos {
     private:
         static ofDirectory videoDirectory;
         static map<string, ofFile> videoFiles;
-        static map<string, myVideoPlayer*> videoPlayers;
         static void initialiseDirectory();
         static void initialiseVideoMap();
     public:
+        static map<string, myVideoPlayer*> videoPlayers;
         static void setup();
         static vector<string> getNames();
         static void printNames();
         static ofFile getFile(string name);
-        static myVideoPlayer * createVideoPlayer(string name);
+        static myVideoPlayer* createVideoPlayer(string name);
         static void update();
 };
 #endif //MYSKETCH_MYVIDEOS_HPP
